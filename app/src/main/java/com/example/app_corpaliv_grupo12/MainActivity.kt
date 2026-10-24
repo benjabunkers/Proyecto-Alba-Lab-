@@ -7,7 +7,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import com.example.app_corpaliv_grupo12.ui.theme.App_Corpaliv_Grupo12Theme
-import com.example.app_corpaliv_grupo12.ui.theme.screens.InstitucionalScreen
+import com.example.app_corpaliv_grupo12.ui.theme.screens.MainScreen
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,7 +18,7 @@ class MainActivity : ComponentActivity() {
                 Surface(
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    InstitucionalScreen()
+                    MainScreen()
 
                 }
             }

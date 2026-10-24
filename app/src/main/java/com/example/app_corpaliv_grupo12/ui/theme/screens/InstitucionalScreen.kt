@@ -31,23 +31,14 @@ import com.example.app_corpaliv_grupo12.viewmodel.InstitucionalViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun InstitucionalScreen(
+fun InstitucionalContent(
     vm: InstitucionalViewModel = viewModel()
 ) {
-    Scaffold(
-        topBar = {
-            TopAppBar(
-                title = {
-                    Text("Información institucional")
-                }
-            )
-        }
-    ) { paddingValues ->
+
 
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(paddingValues)
                 .verticalScroll(rememberScrollState())
                 .padding(20.dp),
             verticalArrangement = Arrangement.spacedBy(16.dp)
@@ -133,7 +124,7 @@ fun InstitucionalScreen(
                             )
                         }
                     }
-                }
+
             }
         }
     }

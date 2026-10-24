@@ -4,7 +4,6 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Email
-import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Info
 import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material.icons.filled.ShoppingCart
@@ -17,7 +16,15 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.app_corpaliv_grupo12.navigation.Screen
 import com.example.app_corpaliv_grupo12.viewmodel.MainViewModel
 import kotlinx.coroutines.launch
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.res.painterResource
 
+import com.example.app_corpaliv_grupo12.R
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun MainScreen(viewModel: MainViewModel = viewModel()) {
@@ -29,16 +36,36 @@ fun MainScreen(viewModel: MainViewModel = viewModel()) {
         drawerState = drawerState,
         drawerContent = {
             ModalDrawerSheet {
-                Text(
-                    text = "CORPALIV / Alba Lab",
+
+                Row (
                     modifier = Modifier.padding(16.dp),
-                    style = MaterialTheme.typography.titleMedium
-                )
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+
+                    Image(
+                        painter = painterResource(id = R.drawable.logo_corpaliv),
+                        contentDescription = "Logo CORPALIV",
+                        modifier = Modifier.size(48.dp)
+                    )
+
+                    Spacer(modifier = Modifier.width(12.dp))
+
+                    Text(
+                        text = "CORPALIV / Alba Lab",
+                        style = MaterialTheme.typography.titleMedium
+                    )
+                }
                 HorizontalDivider()
 
                 NavigationDrawerItem(
                     label = { Text("Inicio") },
-                    icon = { Icon(Icons.Default.Home, contentDescription = null) },
+                    icon = {
+                        Image(
+                            painter = painterResource(id = R.drawable.logo_corpaliv),
+                            contentDescription = "Logo CORPALIV",
+                            modifier = Modifier.size(24.dp)
+                        )
+                    },
                     selected = currentScreen == Screen.Home,
                     onClick = {
                         scope.launch { drawerState.close() }
