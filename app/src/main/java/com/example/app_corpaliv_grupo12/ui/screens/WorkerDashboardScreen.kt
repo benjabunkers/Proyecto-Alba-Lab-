@@ -25,7 +25,7 @@ fun WorkerDashboardScreen(state: DonacionUiState, onDonors: () -> Unit) {
     val pending = state.contactos.count { it.status() == ContactStatus.PENDING }
     val donations = state.contactos.count { it.status() == ContactStatus.DONATED }
     Column(Modifier.fillMaxSize().padding(20.dp), verticalArrangement = Arrangement.spacedBy(15.dp)) {
-        Text("Hola, ${state.nombre.substringBefore(' ').ifBlank { "equipo" }} 👋", style = MaterialTheme.typography.headlineMedium, fontWeight = FontWeight.Bold)
+        Text("Hola!, ${state.nombre.substringBefore(' ').ifBlank { "equipo" }} 👋", style = MaterialTheme.typography.headlineMedium, fontWeight = FontWeight.Bold)
         Text("Resumen del seguimiento de donadores.", color = MaterialTheme.colorScheme.onSurfaceVariant)
         Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
             Metric("${state.contactos.size}", "Contactos", Modifier.weight(1f))
