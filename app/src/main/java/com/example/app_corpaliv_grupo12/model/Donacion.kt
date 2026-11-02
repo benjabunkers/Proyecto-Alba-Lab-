@@ -19,7 +19,11 @@ data class ContactoDonador(
     val correo: String,
     val telefono: String,
     val estado: String = ContactStatus.PENDING.name,
-    val observacion: String = ""
+    val observacion: String = "",
+    val fotoUri: String? = null
 ) {
     fun status(): ContactStatus = ContactStatus.entries.firstOrNull { it.name == estado } ?: ContactStatus.PENDING
 }
+
+
+
